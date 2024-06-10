@@ -1,24 +1,75 @@
-const wrapper = document.querySelector(".wrapper");
-const question = document.querySelector(".question");
-const gif = document.querySelector(".gif");
-const yesBtn = document.querySelector(".yes-btn");
-const noBtn = document.querySelector(".no-btn");
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
 
-yesBtn.addEventListener("click", () => {
-    question.innerHTML = "Aaaaa, I lovee uu moreee hehehe";
-    gif.src = "https://raw.githubusercontent.com/DzarelDeveloper/Img/main/gifyou.webp";
-    yesBtn.style.display = "none";
-    noBtn.style.display = "none";
-});
+.wrapper {
+    text-align: center;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    max-width: 350px;
+}
 
-noBtn.addEventListener("mouseover", () => {
-    const noBtnRect = noBtn.getBoundingClientRect();
-    const maxX = window.innerWidth - noBtnRect.width;
-    const maxY = window.innerHeight - noBtnRect.height;
+.question {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+}
 
-    const randomX = Math.floor(Math.random() * maxX);
-    const randomY = Math.floor(Math.random() * maxY);
+.gif {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
 
-    noBtn.style.left = randomX + "px";
-    noBtn.style.top = randomY + "px";
-});
+.gif:hover {
+    transform: scale(1.05);
+}
+
+.btn-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+button {
+    flex: 1;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.yes-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.yes-btn:hover {
+    background-color: #45a049;
+    transform: translateY(-3px);
+}
+
+.no-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+.no-btn:hover {
+    background-color: #e31e1e;
+    transform: translateY(-3px);
+}
